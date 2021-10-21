@@ -1,6 +1,10 @@
-﻿<h1>Employer: Name</h1>
+﻿@model TechJobsPersistent.ViewModels.AddEmployerViewModel
+
+<h1>Employer: @Model.Name</h1>
 
 <div>
-    <p>Name: name</p>
-    <p>Location: location</p>
+    <p>@Model.Name</p> @* //do i really need the name here again? for looks?//*@
+    <p>@Model.Location</p>
 </div>
+
+
