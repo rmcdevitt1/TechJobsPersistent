@@ -52,10 +52,9 @@ namespace TechJobsPersistent.Controllers
             //        });
             //}
 
-
-            Employer theEmployer = context.Employers.Find(addJobViewModel.EmployerId);
             if (ModelState.IsValid)
             {
+                Employer theEmployer = context.Employers.Find(addJobViewModel.EmployerId);
                 Job job = new Job
                 {
                     Name = addJobViewModel.Name,
