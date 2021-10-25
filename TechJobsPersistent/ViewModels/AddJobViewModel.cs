@@ -23,6 +23,17 @@ namespace TechJobsPersistent.ViewModels
         {
             Employers = new List<SelectListItem>();
 
+            foreach (Employer employer in employers)
+            {
+                Employers.Add(
+                    new SelectListItem
+                    {
+                        Value = employer.Id.ToString(),
+                        Text = employer.Name
+                    });
+
+            }
+
             Skills = skills;
 
         }

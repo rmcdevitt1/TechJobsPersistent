@@ -40,6 +40,18 @@ namespace TechJobsPersistent.Controllers
 
         public IActionResult ProcessAddJobForm(AddJobViewModel addJobViewModel, string[] selectedSkills)
         {
+            //foreach (Employer employer in context.Employers)
+            //{
+            //    addJobViewModel.Employers = new List<SelectListItem>();
+            //    addJobViewModel.Employers.Add(
+            //        new SelectListItem
+            //        {
+            //            Value = employer.Id.ToString(),
+            //            Text = employer.Name
+            //        });
+            //}
+
+
             Employer theEmployer = context.Employers.Find(addJobViewModel.EmployerId);
             if (ModelState.IsValid)
             {
