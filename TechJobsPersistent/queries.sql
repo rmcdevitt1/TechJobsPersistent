@@ -1,6 +1,5 @@
 /*
 Part 1: List the columns and their data types in the Jobs table.
-
 id INT
 name VARCHAR(200)
 employerId INT
@@ -10,6 +9,10 @@ SELECT Name FROM employers
 WHERE Location = "STL";
 
 Part 3:
+SELECT name, description FROM skills
+INNER JOIN jobskills ON jobskills.SkillId = skills.Id
+WHERE jobskills IS NOT NULL
+ORDER BY name ASC;
 
 
 */

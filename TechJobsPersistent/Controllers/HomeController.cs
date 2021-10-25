@@ -40,6 +40,7 @@ namespace TechJobsPersistent.Controllers
 
         public IActionResult ProcessAddJobForm(AddJobViewModel addJobViewModel, string[] selectedSkills)
         {
+            //DONT THINK I NEED THIS
             //foreach (Employer employer in context.Employers)
             //{
             //    addJobViewModel.Employers = new List<SelectListItem>();
