@@ -32,25 +32,19 @@ namespace TechJobsPersistent.Controllers
         [HttpGet("/Add")]
         public IActionResult AddJob()
         {
+            AddJobViewModel addJobViewModel = PopulateViewModel();
+            return View(addJobViewModel);
+        }
+
+        private AddJobViewModel PopulateViewModel()
+        {
             List<Employer> employers = context.Employers.ToList();
             List<Skill> skills = context.Skills.ToList();
-            AddJobViewModel addJobViewModel = new AddJobViewModel(employers, skills);
-            return View(addJobViewModel);
+            return new AddJobViewModel(employers, skills);
         }
 
         public IActionResult ProcessAddJobForm(AddJobViewModel addJobViewModel, string[] selectedSkills)
         {
-            //DONT THINK I NEED THIS
-            //foreach (Employer employer in context.Employers)
-            //{
-            //    addJobViewModel.Employers = new List<SelectListItem>();
-            //    addJobViewModel.Employers.Add(
-            //        new SelectListItem
-            //        {
-            //            Value = employer.Id.ToString(),
-            //            Text = employer.Name
-            //        });
-            //}
 
             if (ModelState.IsValid)
             {
@@ -77,7 +71,11 @@ namespace TechJobsPersistent.Controllers
                 return Redirect("/List");
             }
 
-            return View("AddJob", addJobViewModel);
+            AddJobViewModel addJobViewModel2 = PopulateViewModel();
+
+            addJobViewModel2.Name = addJobViewModel.Name;
+
+            return View("AddJob", addJobViewModel2);
         }
 
         public IActionResult Detail(int id)

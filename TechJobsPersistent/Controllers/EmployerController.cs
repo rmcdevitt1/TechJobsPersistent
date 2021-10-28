@@ -55,7 +55,7 @@ namespace TechJobsPersistent.Controllers
                 return Redirect("/Employer");
 
             }
-            return View("Create", addEmployerViewModel);
+            return View("Add", addEmployerViewModel);
         }
 
         //Make sure that the method is actually passing an Employer object to the view for display.
