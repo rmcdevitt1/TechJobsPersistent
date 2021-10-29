@@ -10,8 +10,8 @@ WHERE Location = "STL";
 
 Part 3:
 SELECT name, description FROM skills
-INNER JOIN jobskills ON jobskills.SkillId = skills.Id
-WHERE jobskills IS NOT NULL
+LEFT JOIN jobskills ON jobskills.SkillId = skills.Id
+WHERE jobskills.SkillId IS NOT NULL
 ORDER BY name ASC;
 
 
